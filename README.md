@@ -17,8 +17,10 @@ This project demonstrates how to create a realtime GPS tracker device using a Ra
 - [Acknowledgments](#acknowledgments)
 
 ## Problem
+Students often struggle to remember where they parked their cars, especially in crowded or unfamiliar parking lots.
 
 ## Solution and Implementation
+This project can serve as a personal parking location memory assistant. The GPS tracker helps users mark the location where they parked, making it easier to locate their cars later. This feature can be particularly useful for students in large university parking lots or urban areas.
   
 ### Hardware
 
