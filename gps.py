@@ -8,7 +8,7 @@
 import serial
 import pynmea2
 
-def read_gps_data(serial_port='COM3', baudrate=9600):
+def read_gps_data(serial_port='COM4', baudrate=9600):
     # Set serial port, baudrate, and timeout
 
     ser = serial.Serial(serial_port, baudrate=baudrate, timeout=1)
@@ -21,3 +21,4 @@ def read_gps_data(serial_port='COM3', baudrate=9600):
 
 if __name__ == "__main__":
     read_gps_data()
+# test
