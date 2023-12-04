@@ -21,4 +21,3 @@ def read_gps_data(serial_port='COM4', baudrate=9600):
 
 if __name__ == "__main__":
     read_gps_data()
-# test
