@@ -11,6 +11,10 @@ import pynmea2
 from geopy.distance import geodesic
 from datetime import datetime
 
+# Velocity limit that determines speeding
+# PROGRAMMER: update velocity limit at a later time, 0.05 m/s is used for testing
+velocity_limit = 0.05
+
 def read_gps_data(serial_port='/dev/ttyACM0'):
 
     # set serial port name and timeout time
@@ -19,6 +23,9 @@ def read_gps_data(serial_port='/dev/ttyACM0'):
     # ensure reset location and time
     last_location = None
     last_time = None
+
+    # counter to keep track the number of violations and label them
+    violation_count = 0
 
     while True:
 
@@ -38,19 +45,24 @@ def read_gps_data(serial_port='/dev/ttyACM0'):
                 velocity = distance / time_difference if time_difference > 0 else 0.0
                 print(f"Latitude: {msg.latitude}, Longitude: {msg.longitude}, Velocity: {velocity} m/s")
 
-                if velocity > 0.05: # PROGRAMMER: update velocity limit at a later time, 0.05 m/s is used for testing
-                    write_velocity_violation(current_time, current_location, velocity)
+                # call write_velocity_violation and update violation count if velocity is greater than velocity limit
+                if velocity > velocity_limit:
+                    violation_count += 1
+                    write_velocity_violation(current_time, current_location, velocity, violation_count)
+                    
 
             # "save" feature
             last_location = current_location
             last_time = current_time
 
-def write_velocity_violation(current_time, current_location, velocity):
+# helper function to write and save velocity violation data
+def write_velocity_violation(current_time, current_location, velocity, violation_count):
 
     # if velocity_violations.txt file doesn't exist, create. if velocity_violations.txt file exists, append time, location, and velocity for each velocity violation
     with open("velocity_violations.txt", "a") as file:
-        violation_info = f"Velocity Violation: {current_time}, {current_location}, {velocity} m/s\n"
+        violation_info = f"Velocity Violation #{violation_count}: {current_time}, {current_location}, {velocity} m/s\n"
         file.write(violation_info)
+
 
 if __name__ == "__main__":
     read_gps_data()
