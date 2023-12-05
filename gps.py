@@ -10,10 +10,14 @@ import serial
 import pynmea2
 from geopy.distance import geodesic
 from datetime import datetime
+import os
 
-# Velocity limit that determines speeding
+# velocity limit that determines speeding
 # PROGRAMMER: update velocity limit at a later time, 0.05 m/s is used for testing
 velocity_limit = 0.05
+
+# specify the USB drive path
+usb_drive_path = "/media/anton/ESD-USB"
 
 def read_gps_data(serial_port='/dev/ttyACM0'):
 
@@ -50,7 +54,6 @@ def read_gps_data(serial_port='/dev/ttyACM0'):
                     violation_count += 1
                     write_velocity_violation(current_time, current_location, velocity, violation_count)
                     
-
             # "save" feature
             last_location = current_location
             last_time = current_time
@@ -58,11 +61,14 @@ def read_gps_data(serial_port='/dev/ttyACM0'):
 # helper function to write and save velocity violation data
 def write_velocity_violation(current_time, current_location, velocity, violation_count):
 
-    # if velocity_violations.txt file doesn't exist, create. if velocity_violations.txt file exists, append time, location, and velocity for each velocity violation
-    with open("velocity_violations.txt", "a") as file:
+    # construct the full file path on the USB drive
+    file_path = os.path.join(usb_drive_path, "velocity_violations.txt")
+    print(f"Writing to file: {file_path}")
+
+    # if velocity_violations.txt file doesn't exist, create. if velocity_violations.txt file exists, append count, time, location, and velocity for each velocity violation
+    with open(file_path, "a") as file:
         violation_info = f"Velocity Violation #{violation_count}: {current_time}, {current_location}, {velocity} m/s\n"
         file.write(violation_info)
-
 
 if __name__ == "__main__":
     read_gps_data()
