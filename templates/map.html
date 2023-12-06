@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Product+Sans&display=swap">
     <title>Speeding Violation Map</title>
     <!-- Include the Google Maps JavaScript API with your API key -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz5C07IvQ9RrxOQKK23FT1kxcnKO3kecs&callback=initMap" async defer></script>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Product Sans', sans-serif;
             margin: 0;
             padding: 0;
         }
@@ -17,9 +18,16 @@
         }
 
         #map {
-            height: 600px;
-            width: 100%;
+        height: 88%;
         }
+
+        html,
+        body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -31,7 +39,7 @@
         Max speed: {% if velocity|length > 0 %} {{ velocity|max }} 
         {% else %} N/A
         {% endif %} MPH
-        <br>Number of violations: {{ violation_number|length }}
+        <br>Total number of violations: {{ violation_number|length }}
     </h3>
     
     <!-- Container for displaying the map -->
@@ -73,7 +81,7 @@
                 animation: google.maps.Animation.DROP
             });
 
-            // add an info window to each marker
+            // Add an info window to each marker
             var infoWindow = new google.maps.InfoWindow({
                 content: 'Violation #' + violationNumber + '<br>Date: ' + date + '<br>Time: ' + time + '<br>Speed: ' + velocity + ' MPH'
             });
