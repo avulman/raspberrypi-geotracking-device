@@ -2,7 +2,10 @@
 
 ## Overview
 
-This project demonstrates how to create a realtime GPS tracker device using a Raspberry Pi, Python, and Javascript. The device allows you to track its live location from anywhere in the world. The project utilizes a Raspberry Pi 3B+ (or Raspberry Pi Zero for a smaller form factor) and a GPS module (such as the Neo 6M GPS module) for accurate location data. This project fufill the term project of CS370 under Professor Shrideep Pallickara and is based on Arijit Das' instructional video and article. 
+The issue of speeding poses a significant concern, particularly among teenagers and young undergraduate students. Newly licensed individuals often exhibit a tendency to engage in reckless driving practices, surpassing designated speed limits. Unfortunately, parents and other responsible family members find themselves with limited tools to effectively monitor and address this potentially perilous behavior.
+In response to this challenge, our term project aim to develop a system capable of tracking the precise geographical coordinates of a vehicle, calculating its velocity, and flagging instances where the speed exceeds predefined limits by integrating a GPS module and the Raspberry Pi. The collected data will be presented through a user-friendly map GUI on a desktop, offering a visual representation of speeding violations. This initiative not only addresses the immediate safety concerns associated with speeding but also provides caregivers with a proactive means of monitoring and guiding young drivers on the road.
+
+This project fufill the term project requirement of CS370 under Professor Shrideep Pallickara . 
 
 ## Table of Contents
 
