@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map with Coordinates</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz5C07IvQ9RrxOQKK23FT1kxcnKO3kecs&callback=initMap" async defer></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Map with Coordinates</h1>
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: calculateCenter()
+            });
+
+            // Parse and add markers for each coordinate
+            var coordinates = {{ coordinates|tojson|safe }};
+            var violationNumbers = {{ violation_number|tojson|safe }};
+            var velocities = {{ velocity|tojson|safe }};
+
+            for (var i = 0; i < coordinates.length; i++) {
+                addMarker(map, coordinates[i], violationNumbers[i], velocities[i]);
+            }
+        }
+
+        function addMarker(map, coordinate, violationNumber, velocity) {
+            var latLng = coordinate.split(',');
+            var marker = new google.maps.Marker({
+                position: {lat: parseFloat(latLng[0]), lng: parseFloat(latLng[1])},
+                map: map,
+                title: 'Violation: ' + violationNumber + ' | Velocity: ' + velocity
+            });
+
+            // Optionally, you can add an info window to each marker
+            var infoWindow = new google.maps.InfoWindow({
+                content: 'Coordinate: ' + coordinate + '<br>Violation: ' + violationNumber + '<br>Velocity: ' + velocity + ' m/s'
+            });
+
+            marker.addListener('click', function() {
+                infoWindow.open(map, marker);
+            });
+        }
+
+        function calculateCenter() {
+            var coordinates = {{ coordinates|tojson|safe }};
+            var latSum = 0;
+            var lngSum = 0;
+
+            for (var i = 0; i < coordinates.length; i++) {
+                var latLng = coordinates[i].split(',');
+                latSum += parseFloat(latLng[0]);
+                lngSum += parseFloat(latLng[1]);
+            }
+
+            var centerLat = latSum / coordinates.length;
+            var centerLng = lngSum / coordinates.length;
+
+            return {lat: centerLat, lng: centerLng};
+        }
+    </script>
+</body>
+</html>
