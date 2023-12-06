@@ -1,4 +1,4 @@
-# Raspberry Pi Driving Velocity Tracker
+# Raspberry Pi 4 Model B Speeding Detection with VK-162 GPS Module 
 
 ## Overview
 
