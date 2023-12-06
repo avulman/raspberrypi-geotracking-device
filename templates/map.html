@@ -1,54 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Map with Coordinates</title>
+    <title>Speeding Violation Map</title>
+    <!-- Include the Google Maps JavaScript API with your API key -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz5C07IvQ9RrxOQKK23FT1kxcnKO3kecs&callback=initMap" async defer></script>
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h3 {
+            text-align: center;
+            margin: 10px;
+        }
+
         #map {
-            height: 400px;
+            height: 600px;
             width: 100%;
         }
     </style>
 </head>
 <body>
-    <h1>Map with Coordinates</h1>
+    <!-- Main heading for the webpage -->
+    <h1>Speeding Violation Map</h1>
+
+    <!-- Display information about the maximum speed and number of violations -->
+    <h3>
+        Max speed: {% if velocity|length > 0 %} {{ velocity|max }} 
+        {% else %} N/A
+        {% endif %} MPH
+        <br>Number of violations: {{ violation_number|length }}
+    </h3>
+    
+    <!-- Container for displaying the map -->
     <div id="map"></div>
 
+    <!-- JavaScript code for initializing the map and adding markers -->
     <script>
+        // Function to initialize the map
         function initMap() {
+            // Create a new Google Map with default zoom and calculated center
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 10,
                 center: calculateCenter()
             });
 
-            // Parse and add markers for each coordinate
+            // Parse and add markers for each violation
             var coordinates = {{ coordinates|tojson|safe }};
             var violationNumbers = {{ violation_number|tojson|safe }};
+            var dates = {{ date|tojson|safe }};
+            var times = {{ time|tojson|safe }};
             var velocities = {{ velocity|tojson|safe }};
 
             for (var i = 0; i < coordinates.length; i++) {
-                addMarker(map, coordinates[i], violationNumbers[i], velocities[i]);
+                // Add a marker for each violation
+                addMarker(map, coordinates[i], violationNumbers[i], dates[i], times[i], velocities[i]);
             }
         }
 
-        function addMarker(map, coordinate, violationNumber, velocity) {
+        // Function to add a marker for a violation
+        function addMarker(map, coordinate, violationNumber, date, time, velocity) {
+            // Split the coordinate string into latitude and longitude
             var latLng = coordinate.split(',');
+
+            // Create a new marker for the violation
             var marker = new google.maps.Marker({
                 position: {lat: parseFloat(latLng[0]), lng: parseFloat(latLng[1])},
                 map: map,
-                title: 'Violation: ' + violationNumber + ' | Velocity: ' + velocity
+                title: 'Violation: ' + violationNumber,
+                animation: google.maps.Animation.DROP
             });
 
-            // Optionally, you can add an info window to each marker
+            // add an info window to each marker
             var infoWindow = new google.maps.InfoWindow({
-                content: 'Coordinate: ' + coordinate + '<br>Violation: ' + violationNumber + '<br>Velocity: ' + velocity + ' m/s'
+                content: 'Violation #' + violationNumber + '<br>Date: ' + date + '<br>Time: ' + time + '<br>Speed: ' + velocity + ' MPH'
             });
 
+            // Add a click event listener to open the info window when the marker is clicked
             marker.addListener('click', function() {
                 infoWindow.open(map, marker);
             });
         }
 
+        // Function to calculate the center of the map based on violation coordinates
         function calculateCenter() {
             var coordinates = {{ coordinates|tojson|safe }};
             var latSum = 0;

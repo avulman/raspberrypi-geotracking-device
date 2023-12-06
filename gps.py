@@ -14,6 +14,7 @@ import os
 
 # velocity limit that determines speeding
 # PROGRAMMER: update velocity limit at a later time, 0.05 m/s is used for testing
+# 1 MPH = 0.44704 m/s
 velocity_limit = 0.05
 
 # specify the USB drive path
