@@ -1,18 +1,18 @@
 import java.io.*;
 import java.util.*;
 
-public class Coordinate {
+public class CoordinateParse {
+  
   public static void main(String[] args) {
-    String coordinates;
-    String filePath;
-    filePath = args[0];
-    parseIt(filePath);
+    String coordinates = parseIt();
+    toFile(coordinates);
     
     
   }
-public static void parseIt(String filePath){
+public static String parseIt(){
+  String coordinates = "";
  try {
-      File myObj = new File("Coordinate.txt");
+      File myObj = new File("velocity_violations.txt");
       Scanner myReader = new Scanner(myObj);
       while (myReader.hasNextLine()) {
         String tmp = myReader.nextLine();
@@ -21,27 +21,26 @@ public static void parseIt(String filePath){
         tmp = tmp.replace(" ", "");
         String[] tmp1 = tmp.split(",");
         String a = tmp1[1];
-        String b = tmp2[2];
-        DecimalFormat df = new DecimalFormat("#.####");
-        double c = Double.parseDouble(df.format(a));
-        double d = Double.parseDouble(df.format(b));
-        coordinates = c + "," + d; 
+        String b = tmp1[2];
+        coordinates = a + "," + b;
+        
       }
       myReader.close();
     } catch (FileNotFoundException e) {
       System.out.println("An error occurred.");
       e.printStackTrace();
+      String test = "error";
+      return test;
     }
+    return coordinates; 
 }
 
   
-public static void toFile(){
-    BufferedWriter out = new BufferedWriter(new FileWriter("pCor.txt"));
+public static void toFile(String coordinates){
     try {
-    out.write(coordinates);}
+    BufferedWriter out = new BufferedWriter(new FileWriter("pCor.txt"));
+    out.write(coordinates);
+    out.close();}
     catch (IOException e){System.out.println("Exception ");}
-    finally{
-    out.close();
-    }
   }
 }
