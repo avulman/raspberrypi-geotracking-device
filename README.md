@@ -2,7 +2,10 @@
 
 ## Overview
 
-This project utilizes a Raspberry Pi along with a USB GPS module to create a realtime GPS tracker. The system is designed to track location data with latitude and longitude, calculate velocity, and identify instances where the velocity exceeds a predetermined speed limit. When a violation occurs, the system records the incident details in a text file on a USB drive. The recorded data can then be visualized on a desktop computer using another Python script that generates a Google Map displaying the coordinates of the speeding incidents.
+The issue of speeding poses a significant concern, particularly among teenagers and young undergraduate students. Newly licensed individuals often exhibit a tendency to engage in reckless driving practices, surpassing designated speed limits. Unfortunately, parents and other responsible family members find themselves with limited tools to effectively monitor and address this potentially perilous behavior.
+In response to this challenge, our term project aim to develop a system capable of tracking the precise geographical coordinates of a vehicle, calculating its velocity, and flagging instances where the speed exceeds predefined limits by integrating a GPS module and the Raspberry Pi. The collected data will be presented through a user-friendly map GUI on a desktop, offering a visual representation of speeding violations. This initiative not only addresses the immediate safety concerns associated with speeding but also provides caregivers with a proactive means of monitoring and guiding young drivers on the road.
+
+This project fufill the term project requirement of CS370 under Professor Shrideep Pallickara . 
 
 ## Table of Contents
 
