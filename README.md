@@ -5,7 +5,14 @@
 The issue of speeding poses a significant concern, particularly among teenagers and young undergraduate students. Newly licensed individuals often exhibit a tendency to engage in reckless driving practices, surpassing designated speed limits. Unfortunately, parents and other responsible family members find themselves with limited tools to effectively monitor and address this potentially perilous behavior.
 In response to this challenge, our term project aim to develop a system capable of tracking the precise geographical coordinates of a vehicle, calculating its velocity, and flagging instances where the speed exceeds predefined limits by integrating a GPS module and the Raspberry Pi. The collected data will be presented through a user-friendly map GUI on a desktop, offering a visual representation of speeding violations. This initiative not only addresses the immediate safety concerns associated with speeding but also provides caregivers with a proactive means of monitoring and guiding young drivers on the road.
 
-This project fufill the term project requirement of CS370 under Professor Shrideep Pallickara . 
+This project fufill the term project requirement of CS370 under Professor Shrideep Pallickara. 
+
+## Files and Directories
+- gps.py: script to record GPS data and calculate velocity
+- map_app.py: Web app to display location of speed violation on an embedded Google map, includes velocity and legal speed limit of the roads in interest.
+- templates
+  - map.html: Main template for the web map app. 
+- README.md: This file. 
 
 ## Table of Contents
 
@@ -34,9 +41,7 @@ For the hardware, a Raspberry Pi 4 Model B 8GB single board computer is used, bu
 There's no better way to analyze the context of speeding incidents than to display all related data visually with Google Maps API. Simply create your own Google Maps API key, generate a map, and input these values into map_app.py. Modification of serial port and external storage for file transfer is more than likely going to be necessary to replicate.
 
 
-
-
-## Getting Started
+## Solution and Implementation
 
 1. Connect the USB GPS module and USB flash drive (or any other external storage) to the Raspberry Pi according to the hardware instructions.
 2. Install the necessary Python libraries (pip install pyserial pynmea2 geopy)
