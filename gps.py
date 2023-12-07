@@ -41,7 +41,7 @@ def read_gps_data(serial_port='/dev/ttyACM0'):
             
             # Assign current location and time
             current_location = (msg.latitude, msg.longitude)
-            current_time = datetime.utcnow()
+            current_time = datetime.now()
 
             # If location and time exist, calculate velocity
             if last_location is not None and last_time is not None:
