@@ -13,6 +13,7 @@ This project fufill the term project requirement of CS370 under Professor Shride
 - templates
   - map.html: Main template for the web map app. 
 - README.md: This file. 
+- CS370 Term Project Report.pdf: A detailed report of this project.
 
 ## Table of Contents
 
