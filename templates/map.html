@@ -61,15 +61,16 @@
             var dates = {{ date|tojson|safe }};
             var times = {{ time|tojson|safe }};
             var velocities = {{ velocity|tojson|safe }};
+            var limits = {{ limit|tojson|safe }};
 
             for (var i = 0; i < coordinates.length; i++) {
                 // Add a marker for each violation
-                addMarker(map, coordinates[i], violationNumbers[i], dates[i], times[i], velocities[i]);
+                addMarker(map, coordinates[i], violationNumbers[i], dates[i], times[i], velocities[i], limits[i]);
             }
         }
 
         // Function to add a marker for a violation
-        function addMarker(map, coordinate, violationNumber, date, time, velocity) {
+        function addMarker(map, coordinate, violationNumber, date, time, velocity, limit) {
             // Split the coordinate string into latitude and longitude
             var latLng = coordinate.split(',');
 
@@ -83,7 +84,7 @@
 
             // Add an info window to each marker
             var infoWindow = new google.maps.InfoWindow({
-                content: 'Violation #' + violationNumber + '<br>Date: ' + date + '<br>Time: ' + time + '<br>Speed: ' + velocity + ' MPH'
+                content: 'Violation #' + violationNumber + '<br>Date: ' + date + '<br>Time: ' + time + '<br>Speed: ' + velocity + ' MPH' + '<br>Speed limit: ' + limit + ' MPH'
             });
 
             // Add a click event listener to open the info window when the marker is clicked
