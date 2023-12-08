@@ -24,7 +24,7 @@ This project fufill the term project requirement of CS370 under Professor Shride
 - [Solution and Implementation](#solution-and-implementation)
   - [Hardware](#hardware)
   - [Pairing a local server with Google Maps API](#pairing-a-local-server-with-google-maps-api)
-  - [Getting Started](#getting-started)
+- [Getting Started](#getting-started)
 - [Conclusion](#conclusion)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgments)
