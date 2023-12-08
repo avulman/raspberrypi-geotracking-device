@@ -1,6 +1,6 @@
 # Raspberry Pi 4 Model B Speeding Detection with VK-162 GPS Module 
 
-![alt text](MapScreenshot.png)
+![Map Screenshot](MapScreenshot.png)
 
 
 ## Overview
@@ -45,7 +45,7 @@ For the hardware, a Raspberry Pi 4 Model B 8GB single board computer is used, bu
 There's no better way to analyze the context of speeding incidents than to display all related data visually with Google Maps API. Simply create your own Google Maps API key, generate a map, and input these values into map_app.py. Modification of serial port and external storage for file transfer is more than likely going to be necessary to replicate.
 
 
-## Solution and Implementation
+## Getting Started
 
 1. Connect the USB GPS module and USB flash drive (or any other external storage) to the Raspberry Pi according to the hardware instructions.
 2. Install the necessary Python libraries (pip install pyserial pynmea2 geopy)
