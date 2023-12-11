@@ -11,7 +11,7 @@ In response to this challenge, our term project aim to develop a system capable 
 This project fufill the term project requirement of CS370 under Professor Shrideep Pallickara. 
 
 ### Video Demonstration
-[Link to Video Demo](https://www.youtube.com/watch?v=J9t9HFjNxCc)
+[Here](https://www.youtube.com/watch?v=J9t9HFjNxCc) is the link to a video overview and demo of the project. 
 
 ## Files and Directories
 - gps.py: script to record GPS data and calculate velocity
