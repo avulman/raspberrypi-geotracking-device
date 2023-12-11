@@ -10,6 +10,9 @@ In response to this challenge, our term project aim to develop a system capable 
 
 This project fufill the term project requirement of CS370 under Professor Shrideep Pallickara. 
 
+### Video Demonstration
+[Link to Video Demo](https://www.youtube.com/watch?v=J9t9HFjNxCc)
+
 ## Files and Directories
 - gps.py: script to record GPS data and calculate velocity
 - map_app.py: Web app to display location of speed violation on an embedded Google map, includes velocity and legal speed limit of the roads in interest.
@@ -70,6 +73,5 @@ This setup enables accurate and reliable tracking and recording of speeding inci
 
 - Special thanks to Abdullah Jirjees for the hardware and software instruction on utilizing GPS module with a desktop on Windows 11. It ignited our desire to make this possible with a more portable device: Raspberry Pi 4 Model B. Links for his [video](https://youtu.be/mUsKgzem9ig?si=Tt_C2jrQ-fzjQ4eM) and [GitHub](https://github.com/AbdullahJirjees/VK-16_GPS/tree/main).
 - Thanks to Professor Shrideep Pallickara and TA's for support and feedback.
-- [Link to video demonstration](link-to-video)
 
 Feel free to contribute and provide feedback!
