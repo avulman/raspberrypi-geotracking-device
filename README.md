@@ -1,6 +1,6 @@
 # Raspberry Pi 4 Model B Speeding Detection with VK-162 GPS Module 
 
-![alt text](MapScreenshot.png)
+![Map Screenshot](map.jpg)
 
 
 ## Overview
@@ -38,6 +38,8 @@ This project addresses the problem by creating a system that utilizes a Raspberr
 ### Hardware
 
 For the hardware, a Raspberry Pi 4 Model B 8GB single board computer is used, but a Raspberry Pi Zero and 3 can also be used. Additionally, VK-162 G-Mouse USB GPS Dongle Navigation Module (though other GPS module is suffice) is required for gathering location data. A 16GB SanDisk USB flash drive is used, for the purpose of transferring a text file with an incident report from the Pi to the desktop for visual data analysis. A standard desktop or laptop is used to display data visually on a local server webpage, with the use of Google Maps API.
+
+![Map Screenshot](hardware.jpg)
 
 
 ### Pairing a local server with Google Maps API
