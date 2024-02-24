@@ -11,7 +11,7 @@ In response to this challenge, our term project aims to develop a system capable
 This project fulfills the term project requirement of CS370 under Professor Shrideep Pallickara. 
 
 ### Video Demonstration
-[Link](https://www.youtube.com/watch?v=J9t9HFjNxCc) to a video demo of the project.
+[Link](https://www.youtube.com/watch?v=J9t9HFjNxCc) to a video demo of the project. <br>
 *Ref 2: YouTube link for Demo*
 
 ## Files and Directories
