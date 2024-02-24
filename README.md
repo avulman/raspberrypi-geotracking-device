@@ -15,11 +15,14 @@ This project fulfills the term project requirement of CS370 under Professor Shri
 *Ref 2: YouTube link for Demo*
 
 ## Files and Directories
-- gps.py: script to record GPS data and calculate velocity
+- gps.py: script to record GPS data and calculate velocity.
 - map_app.py: Web app to display the location of speed violation on an embedded Google map, including velocity and legal speed limit of the roads in interest.
 - templates
   - map.html: Main template for the web map app. 
-- README.md: This file. 
+- README.md: This file.
+- screentshots
+  - map.jpg: Screenshot of the map after data has been processed.
+  - hardware.jpg Visual of the hardware used in the project.
 - CS370 Term Project Report.pdf: A detailed report of this project.
 
 ## Table of Contents
