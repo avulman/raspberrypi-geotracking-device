@@ -1,6 +1,7 @@
 # Raspberry Pi 4 Model B Speeding Detection with VK-162 GPS Module 
 
 ![Map Screenshot](/screenshots/map.jpg)
+*Ref 1: Map after the geographical data has been processed and displayed with Google Maps API*
 
 ## Overview
 
@@ -10,7 +11,8 @@ In response to this challenge, our term project aims to develop a system capable
 This project fulfills the term project requirement of CS370 under Professor Shrideep Pallickara. 
 
 ### Video Demonstration
-[Here](https://www.youtube.com/watch?v=J9t9HFjNxCc) is the link to a video overview and demo of the project. 
+[Link](https://www.youtube.com/watch?v=J9t9HFjNxCc) to a video demo of the project.
+*Ref 2: YouTube link for Demo*
 
 ## Files and Directories
 - gps.py: script to record GPS data and calculate velocity
@@ -42,6 +44,7 @@ This project addresses the problem by creating a system that utilizes a Raspberr
 For the hardware, a Raspberry Pi 4 Model B 8GB single board computer is used, but a Raspberry Pi Zero and 3 can also be used. Additionally, the VK-162 G-Mouse USB GPS Dongle Navigation Module (though another GPS module is sufficient) is required for gathering location data. A 16GB SanDisk USB flash drive is used, to transfer a text file with an incident report from the Pi to the desktop for visual data analysis. A standard desktop or laptop is used to display data visually on a local server webpage, with the use of Google Maps API.
 
 ![Hardware](/screenshots/hardware.jpg)
+*Ref 3: Hardware components*
 
 
 ### Pairing a local server with Google Maps API
