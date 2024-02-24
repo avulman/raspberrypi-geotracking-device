@@ -1,6 +1,10 @@
 # Raspberry Pi 4 Model B Speeding Detection with VK-162 GPS Module 
 
+<<<<<<< HEAD
 ![Map Screenshot](map.jpg)
+=======
+![Map Screenshot](MapScreenshot.png)
+>>>>>>> 9eaf1bd71a7fba5e2978aa23f0279cd5188a452a
 
 
 ## Overview
@@ -9,6 +13,9 @@ The issue of speeding poses a significant concern, particularly among teenagers 
 In response to this challenge, our term project aim to develop a system capable of tracking the precise geographical coordinates of a vehicle, calculating its velocity, and flagging instances where the speed exceeds predefined limits by integrating a GPS module and the Raspberry Pi. The collected data will be presented through a user-friendly map GUI on a desktop, offering a visual representation of speeding violations. This initiative not only addresses the immediate safety concerns associated with speeding but also provides caregivers with a proactive means of monitoring and guiding young drivers on the road.
 
 This project fufill the term project requirement of CS370 under Professor Shrideep Pallickara. 
+
+### Video Demonstration
+[Here](https://www.youtube.com/watch?v=J9t9HFjNxCc) is the link to a video overview and demo of the project. 
 
 ## Files and Directories
 - gps.py: script to record GPS data and calculate velocity
@@ -24,7 +31,7 @@ This project fufill the term project requirement of CS370 under Professor Shride
 - [Solution and Implementation](#solution-and-implementation)
   - [Hardware](#hardware)
   - [Pairing a local server with Google Maps API](#pairing-a-local-server-with-google-maps-api)
-  - [Getting Started](#getting-started)
+- [Getting Started](#getting-started)
 - [Conclusion](#conclusion)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgments)
@@ -47,7 +54,7 @@ For the hardware, a Raspberry Pi 4 Model B 8GB single board computer is used, bu
 There's no better way to analyze the context of speeding incidents than to display all related data visually with Google Maps API. Simply create your own Google Maps API key, generate a map, and input these values into map_app.py. Modification of serial port and external storage for file transfer is more than likely going to be necessary to replicate.
 
 
-## Solution and Implementation
+## Getting Started
 
 1. Connect the USB GPS module and USB flash drive (or any other external storage) to the Raspberry Pi according to the hardware instructions.
 2. Install the necessary Python libraries (pip install pyserial pynmea2 geopy)
@@ -72,6 +79,5 @@ This setup enables accurate and reliable tracking and recording of speeding inci
 
 - Special thanks to Abdullah Jirjees for the hardware and software instruction on utilizing GPS module with a desktop on Windows 11. It ignited our desire to make this possible with a more portable device: Raspberry Pi 4 Model B. Links for his [video](https://youtu.be/mUsKgzem9ig?si=Tt_C2jrQ-fzjQ4eM) and [GitHub](https://github.com/AbdullahJirjees/VK-16_GPS/tree/main).
 - Thanks to Professor Shrideep Pallickara and TA's for support and feedback.
-- [Link to video demonstration](link-to-video)
 
 Feel free to contribute and provide feedback!
